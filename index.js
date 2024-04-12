@@ -40,7 +40,7 @@ app.listen(PORT, () => console.log(`Servidor corriendo en http://localhost:${POR
             console.log(args); //muestra valores en arreglo          
             break;
         default:
-            console.log('Acción no reconocida');
+            console.log('Acción no reconocida en index.js espera data por consola, pero ahora es por ruta o formulario'); //espera data por consola
     }
 };
 main();

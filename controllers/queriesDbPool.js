@@ -1,14 +1,15 @@
 import pool from "../config/dbPool.js"; // Importamos la conexión a la base de datos PostgreSQL
 
 // Función asíncrona para registrar una nueva data en la base de datos
-export const registrarData = async (nombre, rut, curso, nivel) => {
+export const registrarData = async (titulo, artista, tono) => {
   try {
     // Define el objeto queryObj con la consulta SQL y los valores dentro del try
     const queryObjAdd = {
       text: 'insert into canciones (titulo, artista, tono) values ($1,$2,$3) returning *',
-      values: cancion,
+      values: [titulo, artista, tono]
     };
-
+    console.log(queryObjAdd);
+    
     // Ejecuta la consulta utilizando el objeto queryObj
     const result = await pool.query(queryObjAdd);
     console.log('registrado exitosamente.');
@@ -49,7 +50,7 @@ export const obtenerData = async () => {
       const result = await pool.query(queryObjGets);
       console.log(result.rows);
       console.log("Encontrados");
-      return result.rows;
+      // return result.rows;
   } catch (error) {
       console.error('Error al obtener data:', error.stack);
       throw error;
