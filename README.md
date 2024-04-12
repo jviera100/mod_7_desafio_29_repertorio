@@ -14,7 +14,7 @@
 ![MVC](https://img.shields.io/badge/MVC-FF6F61?style=for-the-badge&logoColor=white)
 
 <hr>
-🚀[Desafío_evaluado_-_Always_Music_2](https://mod-7-desafio-28-always-music-2.onrender.com)
+🚀[Desafío_evaluado_repertorio](https://mod-7-desafio-28-always-music-2.onrender.com)
 <br>
 # estructura de carpetas => modelo vista controlador (MVC)
 //importaciones = 
