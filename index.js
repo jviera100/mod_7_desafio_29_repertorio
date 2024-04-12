@@ -3,7 +3,7 @@ const app = express();
 const PORT = process.env.PORT || 3000
 //import setupStaticFolder from './middlewares/staticFolder.js';
 import router from './routes/routes.js';
-import {registrarData, obtenerDataPorFiltro, obtenerData, actualizarData, eliminarData} from "../controllers/queries_dbPool.js";
+import {registrarData, obtenerDataPorFiltro, obtenerData, actualizarData, eliminarData} from "./controllers/queriesDbPool.js";
 
 // Configuración de la carpeta estática
 //setupStaticFolder(app);
