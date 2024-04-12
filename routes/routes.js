@@ -1,6 +1,6 @@
 import { Router } from "express"; //importamos express
 const router = Router();
-import {registrarData, obtenerDataPorFiltro, obtenerData, actualizarData, eliminarData} from "../controllers/queries_dbPool.js"; 
+import {registrarData, obtenerDataPorFiltro, obtenerData, actualizarData, eliminarData} from "../controllers/queriesDbPool.js"; 
 
 
 router.get("/", (req, res) => {
