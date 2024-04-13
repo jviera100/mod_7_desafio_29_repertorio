@@ -14,7 +14,14 @@ const config = {
     port: DB_PORT,
     user: DB_USER,
     password: DB_PASSWORD,    
-    allowExitOnIdle: true // Si es true, la conexión se cerrará por inactividad
+    allowExitOnIdle: true, // Si es true, la conexión se cerrará por inactividad
+
+    dialectOptions: {
+        ssl: {
+            require: true,
+            rejectUnauthorized: false,
+        },
+    }
 }
 
 const pool = new Pool(config);
@@ -31,3 +38,4 @@ const pool = new Pool(config);
 // }
 
 export default pool // se puede exportar el pool o llamarlo db
+
