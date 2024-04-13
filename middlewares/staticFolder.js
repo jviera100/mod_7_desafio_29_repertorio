@@ -8,5 +8,6 @@ const __dirname = dirname(__filename);
 
 export default function setupStaticFolder(app) {
     // Middleware para archivos estáticos
-    app.use(express.static(path.join(__dirname, '..', 'assets')));    
+    app.use(express.static(path.join(__dirname, '..', 'assets'))); 
+    app.use(express.static(path.join(__dirname, '..', 'views')));   
 }

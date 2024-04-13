@@ -1,18 +1,12 @@
 import { Router } from "express"; //importamos express
 const router = Router();
-import {registrarData, obtenerDataPorFiltro, obtenerData, actualizarData, eliminarData} from "../controllers/queriesDbPool.js"; 
 
-
-router.get("/", (req, res) => {
-  res.send("Hello World!");
-});
-
+import {registrarData, obtenerDataPorFiltro, obtenerData, actualizarData, eliminarData} from "../controllers/queriesDbPool.js";
 
 router.post("/registrarData", registrarData);
-router.get("/obtenerDataPorFiltro", obtenerDataPorFiltro);
-//localhost:3000/obtenerTodosLosEstudiantes
+router.get("/obtenerDataPorFiltro/:id", obtenerDataPorFiltro);
 router.get("/obtenerData", obtenerData);
-router.put("/actualizarData", actualizarData);
-router.delete("/eliminarData", eliminarData);
+router.put("/actualizarData/:id", actualizarData);
+router.delete("/eliminarData/:id", eliminarData);
 
 export default router;

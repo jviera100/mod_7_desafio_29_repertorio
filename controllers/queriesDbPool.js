@@ -42,7 +42,7 @@ export const obtenerDataPorFiltro = async (rut) => {
 }
 
 // Función asíncrona para obtener por consola toda la data registrada
-export const obtenerData = async () => {
+export const obtenerData = async (req, res) => {
   try {
       const queryObjGets = {
           text: 'SELECT * FROM canciones'
@@ -50,7 +50,7 @@ export const obtenerData = async () => {
       const result = await pool.query(queryObjGets);
       console.log(result.rows);
       console.log("Encontrados");
-      // return result.rows;
+      res.json(result.rows);
   } catch (error) {
       console.error('Error al obtener data:', error.stack);
       throw error;
