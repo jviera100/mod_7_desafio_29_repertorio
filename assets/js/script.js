@@ -24,7 +24,7 @@
           <td>
             <button class="btn btn-warning" onclick="actualizarData(${i},'${c.id
           }')">Editar</button>
-            <button class="btn btn-danger" onclick="eliminarData('${c.id
+            <button class="btn btn-danger" onclick="eliminarData(${i},'${c.id
           }')">Eliminar</button>
           </td>
         </tr>
@@ -49,10 +49,10 @@
     axios.post(url, data).then(() => getData());
   }
 
-  function eliminarData(id) {
-    console.log(id);
+  function eliminarData(i, id) {
+    console.log(i, id);
     axios.delete("/eliminarData/ " + id).then(() => {
-      alert("Canción " + canciones.titulo + " eliminada");
+      alert("Canción " + canciones[i].titulo + " eliminada");
       obtenerData();
     });
   }
