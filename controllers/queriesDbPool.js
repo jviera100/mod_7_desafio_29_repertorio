@@ -16,6 +16,8 @@ export const registrarData = async (req, res) => {
     console.log('registrado exitosamente.');
     // Retorna el resultado si es necesario
     res.json(result.rows);
+    // await pool.end(); => ya no es necesario, el pool se cierra automaticamente, 
+    //por lo que no es necesario cerrarlo
   } catch (error) {
     // Captura y maneja cualquier error ocurrido durante la ejecución de la consulta
     console.error('Error al registrar data:', error.stack);

@@ -16,6 +16,7 @@ const config = {
     password: DB_PASSWORD,    
     allowExitOnIdle: true, // Si es true, la conexión se cerrará por inactividad
 
+    //conexion al db de neon
     dialectOptions: {
         ssl: {
             require: true,
