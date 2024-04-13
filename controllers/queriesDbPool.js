@@ -1,7 +1,8 @@
 import pool from "../config/dbPool.js"; // Importamos la conexión a la base de datos PostgreSQL
 
 // Función asíncrona para registrar una nueva data en la base de datos
-export const registrarData = async (titulo, artista, tono) => {
+export const registrarData = async (req, res) => {
+  const { titulo, artista, tono } = req.body;
   try {
     // Define el objeto queryObj con la consulta SQL y los valores dentro del try
     const queryObjAdd = {
@@ -14,7 +15,7 @@ export const registrarData = async (titulo, artista, tono) => {
     const result = await pool.query(queryObjAdd);
     console.log('registrado exitosamente.');
     // Retorna el resultado si es necesario
-    return result;
+    res.json(result.rows);
   } catch (error) {
     // Captura y maneja cualquier error ocurrido durante la ejecución de la consulta
     console.error('Error al registrar data:', error.stack);
@@ -25,16 +26,17 @@ export const registrarData = async (titulo, artista, tono) => {
 
 
 // Función asíncrona para obtener por consola el registro de una data por filtro
-export const obtenerDataPorFiltro = async (rut) => {
+export const obtenerDataPorFiltro = async (req, res) => {
+  const { id } = req.params;
   try {
       const queryObjGetFilter = {
-          text: 'SELECT * FROM canciones WHERE titulo = $1',
-          values: [rut]
+          text: 'SELECT * FROM canciones WHERE id = $1',
+          values: [id]
       };
       const result = await pool.query(queryObjGetFilter);
       console.log(result.rows);
       console.log("Encontrado");
-      return result.rows;
+      res.json(result.rows);
   } catch (error) {
       console.error('Error al obtener data por filtro:', error.stack);
       throw error;
@@ -78,22 +80,23 @@ export const actualizarData = async (cancion) => {
 }
 
 // Función asíncrona para eliminar la data de la base de datos
-export const eliminarData = async (id) => {
+export const eliminarData = async (req, res) => {
+  const { id } = req.params;
   try {
       const queryObjDelete = {
-          text: 'DELETE FROM canciones WHERE id = $1 RETURNING *',
+          text: 'DELETE FROM canciones WHERE id = $1',
           values: [id]
       };
       const result = await pool.query(queryObjDelete);
        //Delete requiere validación
-      if (result.rows.length > 0) {
-          console.log(`Registros de canciones con titulo ${titulo} ha sido eliminado.`);
-          console.log(result.rows);
-      } else {
-          console.log('No se encontró una cancion con el titulo proporcionado para eliminar.');
-          console.log(result.rows);
-      }
-      return result.rows;
+      // if (result.rows.length > 0) {
+      //     console.log(`Registros de canciones con titulo ${titulo} ha sido eliminado.`);
+      //     console.log(result.rows);
+      // } else {
+      //     console.log('No se encontró una cancion con el titulo proporcionado para eliminar.');
+      //     console.log(result.rows);
+      // }
+      res.json(result.rows);
   } catch (error) {
       console.error('Error al eliminar la cancion:', error.stack);
       throw error;
