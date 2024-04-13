@@ -20,7 +20,7 @@
 //importaciones = 
 index <= rutas <= query <= config conexion <= .env
 👨🏽‍💻
-<br>
+<Hr>
     //con el MVC (Model-View-Controller o modelo-vista-controlador)
     //(frontend)
     // todo se enlaza en escala, el index.js importa archivo staticFolder de carpeta middlewares,
@@ -31,7 +31,7 @@ index <= rutas <= query <= config conexion <= .env
     //index.js levanta el servidor e importa el routes.js que tiene las rutas con cada consulta o queries.
     //los controllers o queries tienen las funciones o consultas CRUD y este importan el dbPool.js,
     //el dbPool.js es la conexion a la base de datos y este importa las variables de entorno de archivo .env  
-<br>
+<Hr>
 www.desafiolatam.com
 <br>  
 <img src="./assets/img/1.jpg" alt="">
