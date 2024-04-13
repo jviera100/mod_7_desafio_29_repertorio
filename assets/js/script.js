@@ -75,18 +75,23 @@
    }
 
    function actualizarData(id) {
-     axios
-       .put(url + "/" + id, {
-         titulo: cancion.value,
+    axios
+      .put(`/actualizarData/${id}`, { // Utiliza la ruta correcta con el ID
+        titulo: cancion.value,
         artista: artista.value,
-         tono: tono.value,
-       })
-       .then(() => {
-         obtenerDataData();
-         document.getElementById("agregar").style.display = "block";
+        tono: tono.value,
+      })
+      .then(() => {
+        obtenerData(); // Llama a la función para actualizar los datos después de la edición
+        document.getElementById("agregar").style.display = "block";
         document.getElementById("editar").style.display = "none";
-       });
-   }
+      })
+      .catch((error) => {
+        console.error('Error al actualizar la canción:', error);
+        // Manejar el error si es necesario
+      });
+  }
+  
 tbody.addEventListener("click", (e) => {
   if (e.target.classList.contains("btn")) {
     let id = e.target.getAttribute("data-id");

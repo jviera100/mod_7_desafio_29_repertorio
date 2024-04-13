@@ -15,5 +15,9 @@ export default function setupStaticFolder(app) {
     //si hay un html lo muestra en el navegador
     //asi enlazamos desde javascript por index.js a index.html
     //index.html se enlaza con script.js y style.css de carpeta assets (frontend)
-    //recordando que index.js tiene la conexion con el servidor y base de datos (backend)  
+    //recordando que index.js tiene la conexion con el servidor y base de datos (backend) 
+    //con el MVC (Model-View-Controller o modelo-vista-controlador) todo el backend
+    // se enlaza en escala, el index.js importa el middleware que trae en fronted
+    // e importa el router.js y este importa los controllers o queries y este importa el config.js
+    // es decir la conexion con la base de datos y este importa las variables de entorno de archivo .env 
 }
