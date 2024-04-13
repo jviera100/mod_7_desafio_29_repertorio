@@ -13,7 +13,7 @@
 ![Render](https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white)
 ![MVC](https://img.shields.io/badge/MVC-FF6F61?style=for-the-badge&logoColor=white)
 
-<hr>
+<br>
 🚀[Desafío_evaluado_repertorio](https://mod-7-desafio-28-always-music-2.onrender.com)
 <br>
 # estructura de carpetas => modelo vista controlador (MVC)
