@@ -21,16 +21,7 @@
 index <= rutas <= query <= config conexion <= .env
 👨🏽‍💻
 <Hr>
-    //con el MVC (Model-View-Controller o modelo-vista-controlador)
-    //(frontend)
-    // todo se enlaza en escala, el index.js importa archivo staticFolder de carpeta middlewares,
-    //que fija carpetas estaticas views y assets, entonces si hay un html dentro de views o assets 
-    //lo muestra en el navegador, asi enlazamos desde index.js el index.html y este
-    //se enlaza con script.js y style.css de carpeta assets.
-    //(backend database)
-    //index.js levanta el servidor e importa el routes.js que tiene las rutas con cada consulta o queries.
-    //los controllers o queries tienen las funciones o consultas CRUD y este importan el dbPool.js,
-    //el dbPool.js es la conexion a la base de datos y este importa las variables de entorno de archivo .env  
+    <img src="./assets/img/foto_MVC_backend_db_fronted.png" alt="">      
 <Hr>
 www.desafiolatam.com
 <br>  
